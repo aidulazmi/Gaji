@@ -53,6 +53,15 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="<?php echo site_url('C_karyawan/gaji_cetak')?>" class="nav-link">
+              <i class="nav-icon fas fa-briefcase"></i>
+              <p>
+                Cetak Gaji Keseluruhan
+              </p>
+            </a>
+          </li>
           
           <li class="nav-header">Control</li>
           <li class="nav-item">

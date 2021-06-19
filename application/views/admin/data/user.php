@@ -48,7 +48,24 @@
                     <td><?php echo $u->nama_lengkap ?></td>
                     <td><?php echo $u->email ?></td>
                     <td><?php echo $u->jabatan ?></td>
-                    <td><?php echo $u->agama ?></td>
+                    <td><?php
+                      $x =$u->agama;
+                      if ($x == 'i' ) 
+                          echo 'Islam';
+                        elseif($x == 'k' ){
+                           echo 'Kristen Khatolik';
+                        }elseif($x == 'p' ){
+                           echo 'Kristen Protestan';
+                        }elseif($x == 'h' ){
+                           echo 'Hindu';
+                        }elseif($x == 'b' ){
+                           echo 'Buddha';
+                        }
+                        else
+                        {
+                          echo '<span class="badge badge-danger">Belum Ada Bulan</span>';
+                        }
+                      ?></td>
                     <td><?php echo $u->alamat ?></td>
                     <td><?php echo $u->hp ?></td>
                     <td>

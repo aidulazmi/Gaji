@@ -54,5 +54,19 @@ class C_karyawan extends CI_Controller {
 
 
 	}
-	
+	public function gaji_cetak()
+	{
+		if($this->M_login->logged_id2() == 'karyawan')
+	{
+		$data['user2'] = $this->M_karyawan->tampil_data_gaji3();
+		$this->load->view('karyawan/cetak/cetak',$data);
+	}
+	else
+	{
+		redirect("C_login");
+
+	}
+
+
+	}
 }

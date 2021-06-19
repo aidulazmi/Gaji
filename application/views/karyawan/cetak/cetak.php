@@ -42,7 +42,7 @@
     <div class="row">
       <div class="col-md-4">
       <div class="foto">
-        <img src="<?=base_url();?>/asset/loginu/images/logo.png" alt="" width="200" height="auto">
+        <img src="<?=base_url();?>/asset/loginu/images/logo.png" alt="" width="300" height="auto">
       </div>
       </div>
       <div class="col-md-8 kertas-biodata">
@@ -61,7 +61,19 @@
           <tr>
               <td class="textt">Jenis Kelamin</td>
                 <td>:</td>
-                <td><?php echo $u->jk ?></td>
+                <td>
+                       <?php
+                      $x =$u->jk;
+                      if ($x == 'l' ) 
+                          echo 'Laki-Laki';
+                        elseif($x == 'p' ){
+                           echo 'Perempuan';
+                        }
+                        else
+                        {
+                          echo '<span class="badge badge-danger">Belum Ada Bulan</span>';
+                        }
+                      ?></td>
             </tr>
           <tr>
               <td class="textt">Alamat</td>
@@ -121,37 +133,37 @@
           <tr>
               <td class="textt">Gaji Dasar</td>
                 <td>:</td>
-                <td><?php echo $u->gdasar ?></td>
+                <td>Rp. <?php echo $u->gdasar ?></td>
             </tr>
           <tr>
               <td valign="top" class="textt">Masuk</td>
                 <td valign="top">:</td>
-                <td><?php echo $u->hkerja ?></td>
+                <td><?php echo $u->hkerja ?> Hari</td>
             </tr>
             <tr>
               <td valign="top" class="textt">Total Transport</td>
                 <td valign="top">:</td>
-                <td><?php echo $u->totransport ?></td>
+                <td>Rp. <?php echo $u->totransport ?></td>
             </tr>
             <tr>
               <td valign="top" class="textt">Total Presentasi</td>
                 <td valign="top">:</td>
-                <td><?php echo $u->toprestasi ?></td>
+                <td>Rp. <?php echo $u->toprestasi ?></td>
             </tr>
             <tr>
               <td valign="top" class="textt">Luar Kota</td>
                 <td valign="top">:</td>
-                <td><?php echo $u->hluar ?></td>
+                <td><?php echo $u->hluar ?> Hari</td>
             </tr>
             <tr>
               <td valign="top" class="textt">Total Luar</td>
                 <td valign="top">:</td>
-                <td><?php echo $u->toluar ?></td>
+                <td>Rp. <?php echo $u->toluar ?></td>
             </tr>
             <tr>
               <td valign="top" class="textt">Potongan</td>
                 <td valign="top">:</td>
-                <td><?php echo $u->potong ?></td>
+                <td>Rp. <?php echo $u->potong ?></td>
             </tr>
             <tr>
               <td valign="top" class="textt">Total Gaji</td>
@@ -166,11 +178,14 @@
                     $to = $u->toluar;
                     $p = $u->potong;
                     $total = $gd + $td + $tk + $tt + $tp + $tj + $to - $p;
-                    echo $total ?>
+                    echo "Rp.", $total ?>
                       
                     </td>
             </tr>
-            
+            <td valign="top" class="textt"></td>
+                <td valign="top">:</td>
+                <td></td>
+            </tr>
 
             <?php } ?>
         </tbody></table>
