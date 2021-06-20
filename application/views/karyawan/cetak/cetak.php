@@ -133,7 +133,7 @@
           <tr>
               <td class="textt">Gaji Dasar</td>
                 <td>:</td>
-                <td>Rp. <?php echo $u->gdasar ?></td>
+                <td>Rp. <?php echo number_format($u->gdasar, 0, ".", ".") ?></td>
             </tr>
           <tr>
               <td valign="top" class="textt">Masuk</td>
@@ -143,12 +143,12 @@
             <tr>
               <td valign="top" class="textt">Total Transport</td>
                 <td valign="top">:</td>
-                <td>Rp. <?php echo $u->totransport ?></td>
+                <td>Rp. <?php echo number_format($u->totransport, 0, ".", ".") ?></td>
             </tr>
             <tr>
               <td valign="top" class="textt">Total Presentasi</td>
                 <td valign="top">:</td>
-                <td>Rp. <?php echo $u->toprestasi ?></td>
+                <td>Rp. <?php echo number_format($u->toprestasi, 0, ".", ".") ?></td>
             </tr>
             <tr>
               <td valign="top" class="textt">Luar Kota</td>
@@ -158,12 +158,12 @@
             <tr>
               <td valign="top" class="textt">Total Luar</td>
                 <td valign="top">:</td>
-                <td>Rp. <?php echo $u->toluar ?></td>
+                <td>Rp. <?php echo number_format($u->toluar, 0, ".", ".") ?></td>
             </tr>
             <tr>
               <td valign="top" class="textt">Potongan</td>
                 <td valign="top">:</td>
-                <td>Rp. <?php echo $u->potong ?></td>
+                <td>Rp. <?php echo number_format($u->potong, 0, ".", ".")?></td>
             </tr>
             <tr>
               <td valign="top" class="textt">Total Gaji</td>
@@ -178,7 +178,7 @@
                     $to = $u->toluar;
                     $p = $u->potong;
                     $total = $gd + $td + $tk + $tt + $tp + $tj + $to - $p;
-                    echo "Rp.", $total ?>
+                    echo "Rp.", number_format($total, 0, ".", ".") ?>
                       
                     </td>
             </tr>

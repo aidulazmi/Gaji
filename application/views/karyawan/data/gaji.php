@@ -47,7 +47,7 @@
                   <tr>
                     <td><?php echo $i ?></td>
                     <td><?php echo $u->nama_lengkap ?></td>
-                    <td>Rp. <?php echo $u->gdasar ?></td>
+                    <td>Rp. <?php echo number_format($u->gdasar, 0, ".", ".")  ?></td>
                     <td><?php echo $u->hkerja ?> Hari</td>
                     <td>
                        <?php
@@ -83,7 +83,7 @@
                         }
                       ?></td>
                     <td><?php echo $u->tahun ?></td>
-                    <td>Rp. <?php echo $u->potong ?></td>
+                    <td>Rp. <?php echo number_format($u->potong, 0, ".", ".") ?></td>
                     <td>Rp. <?php 
                     $gd = $u->gdasar;
                     $td = $u->tdasar;
@@ -94,7 +94,7 @@
                     $to = $u->toluar;
                     $p = $u->potong;
                     $total = $gd + $td + $tk + $tt + $tp + $tj + $to - $p;
-                    echo $total ?></td>
+                    echo number_format($total, 0, ".", ".") ?></td>
                     <td>
                       <a class="btn btn-info btn-sm" href="<?php echo site_url('C_karyawan/cetak_gaji/'.$u->id_gaji);?>" target="_blank">
                               <i class="fas fa-print">
