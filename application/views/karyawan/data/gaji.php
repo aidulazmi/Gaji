@@ -39,7 +39,7 @@
                     <th>tahun</th>
                     <th>Potongan</th>
                     <th>Total Gaji</th>
-<!--                     <th>Action</th> -->
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -95,13 +95,13 @@
                     $p = $u->potong;
                     $total = $gd + $td + $tk + $tt + $tp + $tj + $to - $p;
                     echo $total ?></td>
-                    <!-- <td>
-                      <a class="btn btn-info btn-sm" href="<?php echo site_url('C_karyawan/cetak_gaji/'.$u->id_gaji);?>">
+                    <td>
+                      <a class="btn btn-info btn-sm" href="<?php echo site_url('C_karyawan/cetak_gaji/'.$u->id_gaji);?>" target="_blank">
                               <i class="fas fa-print">
                               </i>
                               Print
                       </a>
-                    </td> -->
+                    </td>
                   </tr>
                   <?php } ?>
                   </tbody>
@@ -115,7 +115,7 @@
                     <th>tahun</th>
                     <th>Potongan</th>
                     <th>Total Gaji</th>
-                    <!-- <th>Action</th> -->
+                    <th>Action</th>
                   </tr>
                   </tfoot>
                 </table>

@@ -35,14 +35,12 @@ class C_karyawan extends CI_Controller {
 	}
 
 
-		function cetak_gaji($id_gaji){
+function cetak_gaji($id_gaji){
 			if($this->M_login->logged_id2() == 'karyawan')
 	{
 
 		
-		$where = array('id_gaji' => $id_gaji);
-		$data['user'] = $this->M_karyawan->edit_data_gaji($where,'gaji')->result();
-		$data['user2'] = $this->M_karyawan->tampil_data_gaji3();
+		$data['user2'] = $this->M_karyawan->tampil_data_gaji3($id_gaji);
 		$this->load->view('karyawan/cetak/cetak',$data);
 	}
 	else
@@ -58,7 +56,7 @@ class C_karyawan extends CI_Controller {
 	{
 		if($this->M_login->logged_id2() == 'karyawan')
 	{
-		$data['user2'] = $this->M_karyawan->tampil_data_gaji3();
+		$data['user2'] = $this->M_karyawan->tampil_data_gaji4();
 		$this->load->view('karyawan/cetak/cetak',$data);
 	}
 	else
@@ -69,4 +67,5 @@ class C_karyawan extends CI_Controller {
 
 
 	}
+
 }
