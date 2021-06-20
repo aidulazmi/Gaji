@@ -49,7 +49,7 @@
             <a href="<?php echo site_url('C_admin/jabatan')?>" class="nav-link">
               <i class="nav-icon fas fa-briefcase"></i>
               <p>
-                Jabatan
+                Karyawan
               </p>
             </a>
           </li>

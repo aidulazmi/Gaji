@@ -476,6 +476,22 @@ class C_admin extends CI_Controller {
 	}
 }
 
+function cetak_gaji($id_gaji){
+			if($this->M_login->logged_id2() == 'admin')
+	{
 
+		
+		$data['user2'] = $this->M_admin->tampil_data_gaji3($id_gaji);
+		$this->load->view('karyawan/cetak/cetak',$data);
+	}
+	else
+	{
+		redirect("C_login");
+
+	}
+
+
+
+	}
 
 }

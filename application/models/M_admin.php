@@ -62,8 +62,12 @@ class M_admin extends CI_Model{
 		$this->db->update($table,$data);
 	}
 	function tampil_data_user2(){
-		$query = $this->db->query("SELECT user.id_user, user.nama_lengkap,user.email, user.username,user.bagian, user.jk, user.agama, user.alamat, user.hp, user.password, user.status, jabatan.id_jabatan, jabatan.jabatan, jabatan.keterangan from jabatan JOIN user on user.id_jabatan = jabatan.id_jabatan");
+		$query = $this->db->query("SELECT user.id_user, user.nama_lengkap,user.email, user.username,user.bagian, user.jk, user.agama, user.alamat, user.hp, user.password, user.status, jabatan.id_jabatan, jabatan.jabatan, jabatan.keterangan from jabatan JOIN user on user.id_jabatan = jabatan.id_jabatan where status = 'karyawan'");
         return $query->result();
 	}
 
+	function tampil_data_gaji3($id_gaji){
+		$query = $this->db->query("SELECT user.id_user,user.alamat,user.hp, user.jk, user.nama_lengkap,user.email, gaji.id_gaji,sum(gaji.gdasar) as gdasar ,sum(gaji.tdasar) as tdasar, sum(gaji.tkemahalan) as tkemahalan, sum(gaji.hkerja) as hkerja, sum(gaji.ttransport) as ttransport, sum(gaji.totransport) as totransport, sum(gaji.tprestasi) as tprestasi, sum(gaji.toprestasi) as toprestasi, (gaji.tjabatan) as tjabatan ,gaji.bulan, gaji.tahun, sum(gaji.hluar) as hluar,sum( gaji.tluar) AS tluar, sum(gaji.toluar) as toluar, sum(gaji.potong) as potong from user JOIN gaji on gaji.id_user = user.id_user WHERE gaji.id_gaji = '".$id_gaji."' GROUP BY gaji.bulan & gaji.tahun");
+		return $query->result();
+	}
 }

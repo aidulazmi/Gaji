@@ -30,6 +30,16 @@
 .biodata {
     margin-top: 30px;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
     </style>
   </head>
   <body>
@@ -194,9 +204,24 @@
     </tr>
     </tbody></table>
   </div>
-      </div>
+</div>
     </div>
+
   </div>
+  <p align="right"> Pekanbaru, <?php echo date('d M y');?> </p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p align="right"> H. Erizon Chan
+
+<div class="footer">
+  <hr>
+  <p><b>Alamat :</b></p>
+  <p>Jl. Pertanian B-18</p>
+  <p>Kota Pekanbaru Riau - 28294</p>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -46,7 +46,7 @@
                   <tr>
                     <td><?php echo $i ?></td>
                     <td><?php echo $u->nama_lengkap ?></td>
-                    <td>Rp. <?php echo $u->gdasar ?></td>
+                    <td>Rp. <?php echo number_format($u->gdasar, 0, ".", ".") ?></td>
                     <td><?php echo $u->hkerja ?> Hari</td>
                     <td>
                        <?php
@@ -82,7 +82,7 @@
                         }
                       ?></td>
                     <td><?php echo $u->tahun ?></td>
-                    <td>Rp. <?php echo $u->potong ?></td>
+                    <td>Rp. <?php echo number_format($u->potong, 0, ".", ".") ?></td>
                     <td>Rp. <?php 
                     $gd = $u->gdasar;
                     $td = $u->tdasar;
@@ -93,9 +93,9 @@
                     $to = $u->toluar;
                     $p = $u->potong;
                     $total = $gd + $td + $tk + $tt + $tp + $tj + $to - $p;
-                    echo $total ?></td>
-                    <td>
-                      <a class="btn btn-info btn-sm" href="<?php echo site_url('C_admin/edit_gaji/'.$u->id_gaji);?>">
+                    echo number_format($total, 0, ".", ".")?></td>
+                    <td class="project-actions text-right">
+                      <a class="btn btn-primary btn-sm" href="<?php echo site_url('C_admin/edit_gaji/'.$u->id_gaji);?>">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Ubah
@@ -105,8 +105,12 @@
                               </i>
                               Hapus
                       </a>
-                    
-                      
+                      <a class="btn btn-success btn-sm" href="<?php echo site_url('C_admin/cetak_gaji/'.$u->id_gaji);?>" target="_blank">
+                              <i class="fas fa-print">
+                      </i>
+                              Cetak
+                      </a>
+
                     </td>
                   </tr>
                   <?php } ?>
